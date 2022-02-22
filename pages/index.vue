@@ -4,13 +4,33 @@
     .index-info
       .main-section
         .information
-          .picture(data-aos="zoom-out")
+          .picture(data-aos="zoom-out", data-aos-duration="1000")
           div
             h1.text-gray-100.text-5xl.font-mono(
               data-aos="fade-up", data-aos-duration="1000"
             ) Leah Chou
-            p.text-gray-100.font-mono.text-blut-400.typewriter A Front-end Engineer
-            .detail
+            p.text-gray-100.font-mono.text-blut-400.typewriter A Frontend Engineer
+            .mt-6.font-mono
+              .detail-item.text-gray-100(
+                data-aos="fade-up", data-aos-delay="1000", data-aos-duration="1000"
+              )
+                fa(:icon="['fas', 'map-marker-alt']", :class="['ml-0.5']")
+                | Taipi, Taiwan
+              .detail-item.text-gray-100(
+                data-aos="fade-up", data-aos-delay="1200", data-aos-duration="1000"
+              )
+                fa(:icon="['fas', 'envelope']")
+                | leahchou.fee@gmail.com
+              .mt-5.text-gray-100.text-lg(
+                data-aos="fade-up", data-aos-delay="1400", data-aos-duration="1000"
+              )
+                template(v-for="(link, icon) in links")
+                  a.mr-3(
+                    :href="link",
+                    :class="['hover:text-green-300']",
+                    target="_blank"
+                  )
+                    fa(:icon="['fab', icon]")
     vue-particles.h-screen
   section#skill.h-screen(data-aos="fade-up", data-aos-duration="1000")
     h2.text-gray-100.text-5xl.font-mono.text-center Skill
@@ -40,6 +60,10 @@ export default {
       },
       current_block: "",
       skill_visibility: false,
+      links: {
+        linkedin: "https://www.linkedin.com/in/leah-chou-954438199/",
+        github: "https://github.com/kitkat0529",
+      },
     };
   },
   mounted() {

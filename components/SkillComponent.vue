@@ -4,7 +4,7 @@ import { Radar } from "vue-chartjs";
 export default {
   extends: Radar,
   data() {
-    const main_color = "#f3f4f6ba";
+    const main_color = "#6ee7b7ba";
     const background_color = "#202a37";
     return {
       data: {
@@ -44,6 +44,7 @@ export default {
           },
           pointLabels: {
             fontColor: "#fff",
+            fontSize: 15,
           },
           height: 600,
         },

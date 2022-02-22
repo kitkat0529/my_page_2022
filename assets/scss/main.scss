@@ -65,6 +65,12 @@
     border-radius: 100%;
   }
 
+  .detail-item {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 0.1fr 1fr;
+  }
+
   @media #{$sm-layout} {
     display: block;
     margin-top: 35%;
@@ -98,7 +104,8 @@ section {
       opacity: 0;
     }
 
-    &:hover, &.active {
+    &:hover,
+    &.active {
       i {
         background-color: $primary;
       }
