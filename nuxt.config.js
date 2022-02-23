@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "mypage",
+    title: "Leah Chou",
     htmlAttrs: {
       lang: "en",
     },
@@ -21,7 +21,11 @@ export default {
   css: [{ src: "./assets/scss/main.scss", lang: "scss" }],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ["./plugins/particles.js", { src: "./plugins/aos.js", ssr: false }],
+  plugins: [
+    "./plugins/particles.js",
+    { src: "./plugins/aos.js", ssr: false },
+    { src: "./plugins/carousel.js" },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

@@ -35,11 +35,12 @@
                     fa(:icon="['fab', icon]")
     vue-particles.h-screen
   autobiography-component
-  section#skill.h-screen(data-aos="fade-up", data-aos-duration="1000")
-    h2.text-gray-100.text-5xl.font-mono.text-center 技能
+  section#skill.min-h-screen(data-aos="fade-up", data-aos-duration="1000")
+    h2.text-gray-100.text-5xl.font-mono.text-center.tracking-widest 技能
     .skill-canvas
       skill-component(data-aos="zoom-in", data-aos-delay="500")
   resume-component
+  .p-5
   side-menu(:current_block="current_block")
 </template>
 

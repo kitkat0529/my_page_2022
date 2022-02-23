@@ -1,8 +1,8 @@
 <template lang="pug">
 ul#side-menu(v-if="current_block !== ''")
-  li(v-for="menu in menus", :class="{ 'active': current_block == menu }")
+  li(v-for="(menu, key) in menus", :class="{ 'active': current_block == key }")
     i
-    span.text-gray-200.uppercase {{ menu }}
+    span.text-gray-200 {{ menu }}
 </template>
 
 <script>
@@ -15,7 +15,12 @@ export default {
   },
   data() {
     return {
-      menus: ["top", "autobiography", "skill", "resume"],
+      menus: {
+        top: "個人資料",
+        autobiography: "簡歷",
+        skill: "技能",
+        resume: "經歷與作品",
+      },
     };
   },
 };
