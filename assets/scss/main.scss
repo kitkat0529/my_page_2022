@@ -1,4 +1,5 @@
 @import "./variables.scss";
+@import "./autobiography.scss";
 
 .index-info {
   position: absolute;
@@ -50,10 +51,6 @@
 }
 
 .information {
-  display: flex;
-  align-items: top;
-  margin-top: 25%;
-
   .picture {
     margin-right: 50px;
     width: 200px;

@@ -3,9 +3,11 @@
   .h-screen
     .index-info
       .main-section
-        .information
+        .information.grid.grid-cols-1.mt-36(
+          :class="['md:grid-cols-2', 'lg:grid-cols-3', 'xl:grid-cols-4', 'md:mt-80']"
+        )
           .picture(data-aos="zoom-out", data-aos-duration="1000")
-          div
+          .mt-5(:class="['md:mt-0']")
             h1.text-gray-100.text-5xl.font-mono(
               data-aos="fade-up", data-aos-duration="1000"
             ) Leah Chou
@@ -32,8 +34,9 @@
                   )
                     fa(:icon="['fab', icon]")
     vue-particles.h-screen
+  autobiography-component
   section#skill.h-screen(data-aos="fade-up", data-aos-duration="1000")
-    h2.text-gray-100.text-5xl.font-mono.text-center Skill
+    h2.text-gray-100.text-5xl.font-mono.text-center 技能
     .skill-canvas
       skill-component(data-aos="zoom-in", data-aos-delay="500")
   resume-component
@@ -41,6 +44,7 @@
 </template>
 
 <script>
+import AutobiographyComponent from "../components/AutobiographyComponent.vue";
 import SkillComponent from "../components/SkillComponent.vue";
 import ResumeComponent from "../components/ResumeComponent.vue";
 import SideMenu from "../components/SideMenu.vue";
@@ -48,6 +52,7 @@ import SideMenu from "../components/SideMenu.vue";
 export default {
   name: "IndexPage",
   components: {
+    "autobiography-component": AutobiographyComponent,
     "skill-component": SkillComponent,
     "resume-component": ResumeComponent,
     "side-menu": SideMenu,
@@ -55,6 +60,7 @@ export default {
   data() {
     return {
       offset: {
+        autobiography: null,
         skill: null,
         resume: null,
       },
@@ -68,18 +74,25 @@ export default {
   },
   mounted() {
     window.addEventListener("scroll", this.setCurrentBlock);
-    this.offset.skill = document.getElementById("skill");
-    this.offset.resume = document.getElementById("resume");
+    Object.keys(this.offset).forEach((key) => {
+      this.offset[key] = document.getElementById(key);
+    });
     this.setCurrentBlock();
   },
   methods: {
     setCurrentBlock() {
       const window_offset = window.pageYOffset;
+      const autobiography_offset = this.offset.autobiography.offsetTop - 100;
       const skill_offset = this.offset.skill.offsetTop - 100;
       const resume_offset = this.offset.resume.offsetTop - 500;
 
-      if (window_offset < skill_offset) {
+      if (window_offset < autobiography_offset) {
         this.current_block = "";
+      } else if (
+        window_offset > autobiography_offset &&
+        window_offset < skill_offset
+      ) {
+        this.current_block = "autobiography";
       } else if (
         window_offset > skill_offset &&
         window_offset < resume_offset
