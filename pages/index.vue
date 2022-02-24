@@ -8,11 +8,11 @@
         )
           .picture(data-aos="zoom-out", data-aos-duration="1000")
           .mt-5(:class="['md:mt-0']")
-            h1.text-gray-100.text-5xl.font-mono(
+            h1.text-gray-100.text-4xl.font-mono(
               data-aos="fade-up", data-aos-duration="1000"
             ) Leah Chou
             p.text-gray-100.font-mono.text-blut-400.typewriter A Frontend Engineer
-            .mt-6.font-mono
+            .mt-3.font-mono(:class="['md:mt-6']")
               .detail-item.text-gray-100(
                 data-aos="fade-up", data-aos-delay="1000", data-aos-duration="1000"
               )
@@ -23,8 +23,9 @@
               )
                 fa(:icon="['fas', 'envelope']")
                 | leahchou.fee@gmail.com
-              .mt-5.text-gray-100.text-lg(
-                data-aos="fade-up", data-aos-delay="1400", data-aos-duration="1000"
+              .mt-3.text-gray-100.text-lg(
+                data-aos="fade-up", data-aos-delay="1400", data-aos-duration="1000",
+                :class="['sm:mt-5']"
               )
                 template(v-for="(link, icon) in links")
                   a.mr-3(
@@ -36,11 +37,10 @@
     vue-particles.h-screen
   autobiography-component
   section#skill.min-h-screen(data-aos="fade-up", data-aos-duration="1000")
-    h2.text-gray-100.text-5xl.font-mono.text-center.tracking-widest 技能
+    h2.text-gray-100.text-4xl.font-mono.text-center.tracking-widest 技能
     .skill-canvas
       skill-component(data-aos="zoom-in", data-aos-delay="500")
   resume-component(:sticky_title="sticky_title")
-  .p-5
   side-menu(:current_block="current_block", :menu_visibility="menu_visibility")
   mobile-menu(:current_block="current_block", :button_visibility="menu_visibility")
 </template>

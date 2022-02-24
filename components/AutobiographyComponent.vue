@@ -1,9 +1,9 @@
 <template lang="pug">
-section#autobiography.py-0.relative.w-full
+section#autobiography.py-0.relative.w-screen.overflow-hidden
   .grid.grid-cols-1(:class="['md:grid-cols-2']")
     div
     .bg-gray-800.bg-opacity-60.min-h-screen.px-20.py-20(:class="['md:py-10', 'lg:py-20']")
-      h2.text-gray-100.text-5xl.font-mono.text-center.tracking-widest(
+      h2.text-gray-100.text-4xl.font-mono.text-center.tracking-widest(
         data-aos="fade-up", data-aos-duration="1000"
       )
         | 簡歷
