@@ -42,6 +42,7 @@
   resume-component
   .p-5
   side-menu(:current_block="current_block")
+  mobile-menu(:current_block="current_block")
 </template>
 
 <script>
@@ -49,6 +50,7 @@ import AutobiographyComponent from "../components/AutobiographyComponent.vue";
 import SkillComponent from "../components/SkillComponent.vue";
 import ResumeComponent from "../components/ResumeComponent.vue";
 import SideMenu from "../components/SideMenu.vue";
+import MobileMenu from "../components/mobile/SideMenu.vue";
 
 export default {
   name: "IndexPage",
@@ -57,6 +59,7 @@ export default {
     "skill-component": SkillComponent,
     "resume-component": ResumeComponent,
     "side-menu": SideMenu,
+    "mobile-menu": MobileMenu,
   },
   data() {
     return {

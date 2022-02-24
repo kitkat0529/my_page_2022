@@ -1,5 +1,8 @@
 <template lang="pug">
-ul#side-menu(v-if="current_block !== ''")
+ul#side-menu.hidden(
+  v-if="current_block !== ''",
+  :class="['md:block']"
+)
   li(
     v-for="(menu, key) in menus",
     :class="{ 'active': current_block == key }",
