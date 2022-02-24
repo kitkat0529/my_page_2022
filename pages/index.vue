@@ -41,8 +41,8 @@
       skill-component(data-aos="zoom-in", data-aos-delay="500")
   resume-component
   .p-5
-  side-menu(:current_block="current_block")
-  mobile-menu(:current_block="current_block")
+  side-menu(:current_block="current_block", :menu_visibility="menu_visibility")
+  mobile-menu(:current_block="current_block", :button_visibility="menu_visibility")
 </template>
 
 <script>
@@ -74,6 +74,7 @@ export default {
         linkedin: "https://www.linkedin.com/in/leah-chou-954438199/",
         github: "https://github.com/kitkat0529",
       },
+      menu_visibility: false,
     };
   },
   mounted() {
@@ -89,6 +90,8 @@ export default {
       const autobiography_offset = this.offset.autobiography.offsetTop - 500;
       const skill_offset = this.offset.skill.offsetTop - 300;
       const resume_offset = this.offset.resume.offsetTop - 300;
+
+      this.menu_visibility = window_offset > autobiography_offset;
 
       if (window_offset < autobiography_offset) {
         this.current_block = "";

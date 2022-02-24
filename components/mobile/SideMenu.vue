@@ -29,10 +29,13 @@ export default {
       type: String,
       default: "",
     },
+    button_visibility: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
-      button_visibility: false,
       menu_visibility: false,
       menus: {
         top: "user",
@@ -42,8 +45,10 @@ export default {
       },
     };
   },
-  mounted() {
-    window.addEventListener("scroll", this.setButtonVisibility);
+  watch: {
+    button_visibility(current) {
+      if (!current) this.menu_visibility = false;
+    },
   },
   methods: {
     scroll(key) {
@@ -52,16 +57,6 @@ export default {
           this.menu_visibility = false;
       }
       document.querySelector(`#${key}`).scrollIntoView({ behavior: "smooth" });
-    },
-    setButtonVisibility() {
-      const window_offset = window.pageYOffset;
-      const first_block =
-        document.querySelector("#autobiography").offsetTop - 500;
-
-      this.button_visibility = window_offset > first_block;
-      if (window_offset < first_block) {
-        this.menu_visibility = false;
-      }
     },
   },
 };

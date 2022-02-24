@@ -1,5 +1,5 @@
 <template lang="pug">
-section#autobiography.py-0.relative
+section#autobiography.py-0.relative.w-full
   .grid.grid-cols-1(:class="['md:grid-cols-2']")
     div
     .bg-gray-800.bg-opacity-60.min-h-screen.px-20.py-20(:class="['md:py-10', 'lg:py-20']")

@@ -18,10 +18,13 @@ export default {
       type: String,
       default: "",
     },
+    menu_visibility: {
+      type: Boolean,
+      default: false,
+    },
   },
   data() {
     return {
-      menu_visibility: false,
       menus: {
         top: "個人資料",
         autobiography: "簡歷",
@@ -30,19 +33,9 @@ export default {
       },
     };
   },
-  mounted() {
-    window.addEventListener("scroll", this.setMenuVisibility);
-  },
   methods: {
     scroll(key) {
       document.querySelector(`#${key}`).scrollIntoView({ behavior: "smooth" });
-    },
-    setMenuVisibility() {
-      const window_offset = window.pageYOffset;
-      const first_block =
-        document.querySelector("#autobiography").offsetTop - 500;
-
-      this.menu_visibility = window_offset > first_block;
     },
   },
 };
