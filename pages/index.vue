@@ -1,6 +1,6 @@
 <template lang="pug">
 .bg-gray-800
-  .h-screen
+  #top.h-screen
     .index-info
       .main-section
         .information.grid.grid-cols-1.mt-36(
@@ -85,7 +85,7 @@ export default {
       const window_offset = window.pageYOffset;
       const autobiography_offset = this.offset.autobiography.offsetTop - 100;
       const skill_offset = this.offset.skill.offsetTop - 100;
-      const resume_offset = this.offset.resume.offsetTop - 500;
+      const resume_offset = this.offset.resume.offsetTop - 100;
 
       if (window_offset < autobiography_offset) {
         this.current_block = "";

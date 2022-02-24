@@ -1,6 +1,6 @@
 <template lang="pug">
 section#resume
-  h2.text-gray-100.text-5xl.font-mono.text-center.tracking-widest 經歷與作品
+  h2.text-gray-100.text-5xl.font-mono.text-center.tracking-widest 經歷與網頁作品
   .mx-auto.mt-20(:class="['w-11/12', 'md:w-2/3']")
     .relative.border-l-4.border-gray-500.px-5.pb-10(
       v-for="data in informations",

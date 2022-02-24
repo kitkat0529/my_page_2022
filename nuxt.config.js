@@ -24,7 +24,8 @@ export default {
   plugins: [
     "./plugins/particles.js",
     { src: "./plugins/aos.js", ssr: false },
-    { src: "./plugins/carousel.js" },
+    "./plugins/carousel.js",
+    "./plugins/smoothscroll.js",
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
