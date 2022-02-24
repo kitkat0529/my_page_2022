@@ -79,11 +79,19 @@ section {
   padding: 30px 0;
 }
 
+.menu-nav {
+  transition: all .3s ease;
+}
+
 #side-menu {
   position: fixed;
   top: calc(50vh - 80px);
-  left: 20px;
+  left: -150px;
   list-style-type: none;
+
+  &.show {
+    left: 20px;
+  }
 
   li {
     display: flex;

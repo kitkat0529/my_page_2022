@@ -1,4 +1,10 @@
 #mobile-menu {
+  bottom: 0;
+
+  &.show {
+    bottom: 5rem;
+  }
+
   .toggle {
     z-index: 2;
 
@@ -44,8 +50,9 @@
     width: 0;
     height: 0;
     border-radius: 50%;
-    background-color: rgba(110, 231, 183);
+    background-color: rgba(31, 41, 55);
     transition: all .1s ease;
+    opacity: .5;
   }
 
   &.active {

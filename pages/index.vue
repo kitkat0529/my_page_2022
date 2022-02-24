@@ -86,9 +86,9 @@ export default {
   methods: {
     setCurrentBlock() {
       const window_offset = window.pageYOffset;
-      const autobiography_offset = this.offset.autobiography.offsetTop - 100;
-      const skill_offset = this.offset.skill.offsetTop - 100;
-      const resume_offset = this.offset.resume.offsetTop - 100;
+      const autobiography_offset = this.offset.autobiography.offsetTop - 500;
+      const skill_offset = this.offset.skill.offsetTop - 300;
+      const resume_offset = this.offset.resume.offsetTop - 300;
 
       if (window_offset < autobiography_offset) {
         this.current_block = "";
