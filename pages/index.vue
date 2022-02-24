@@ -39,7 +39,7 @@
     h2.text-gray-100.text-5xl.font-mono.text-center.tracking-widest 技能
     .skill-canvas
       skill-component(data-aos="zoom-in", data-aos-delay="500")
-  resume-component
+  resume-component(:sticky_title="sticky_title")
   .p-5
   side-menu(:current_block="current_block", :menu_visibility="menu_visibility")
   mobile-menu(:current_block="current_block", :button_visibility="menu_visibility")
@@ -75,6 +75,7 @@ export default {
         github: "https://github.com/kitkat0529",
       },
       menu_visibility: false,
+      sticky_title: false,
     };
   },
   mounted() {
@@ -92,6 +93,7 @@ export default {
       const resume_offset = this.offset.resume.offsetTop - 300;
 
       this.menu_visibility = window_offset > autobiography_offset;
+      this.sticky_title = window_offset > resume_offset;
 
       if (window_offset < autobiography_offset) {
         this.current_block = "";

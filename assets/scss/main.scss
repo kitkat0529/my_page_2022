@@ -88,6 +88,7 @@ section {
   top: calc(50vh - 80px);
   left: -150px;
   list-style-type: none;
+  z-index: 2;
 
   &.show {
     left: 20px;
@@ -130,5 +131,28 @@ section {
 
   canvas {
     height: 60vh;
+  }
+}
+
+#resume {
+  background-image: linear-gradient(
+      rgba(31, 41, 55, 0.9),
+      rgba(31, 41, 55, 0.9)
+    ),
+    url(../../static/background-2.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+
+  h2.sticky {
+    background-image: linear-gradient(
+        rgba(31, 41, 55, 0.9),
+        rgba(31, 41, 55, 0.9)
+      ),
+      url(../../static/background-2.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    z-index: 1;
   }
 }
