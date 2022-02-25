@@ -8,10 +8,12 @@ ul#side-menu.hidden.menu-nav(
     @click="scroll(key)"
   )
     i
-    span.text-gray-200 {{ menu }}
+    span.text-gray-200 {{ menu.name }}
 </template>
 
 <script>
+import menus from "../assets/menus";
+
 export default {
   props: {
     current_block: {
@@ -25,12 +27,7 @@ export default {
   },
   data() {
     return {
-      menus: {
-        top: "個人資料",
-        autobiography: "簡歷",
-        skill: "技能",
-        resume: "經歷與網頁作品",
-      },
+      menus,
     };
   },
   methods: {

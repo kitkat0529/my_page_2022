@@ -35,14 +35,18 @@
                   )
                     fa(:icon="['fab', icon]")
     vue-particles.h-screen
-  autobiography-component
+  autobiography-component(:title="menus.autobiography.name")
   section#skill.min-h-screen(data-aos="fade-up", data-aos-duration="1000")
-    h2.text-gray-100.text-4xl.font-mono.text-center.tracking-widest 技能
+    h2.text-gray-100.text-4xl.font-mono.text-center.tracking-widest
+      | {{ menus.skill.name }}
     .skill-canvas.w-0.h-0.pt-0(:class="['sm:w-auto', 'sm:h-auto', 'sm:pt-16']")
       skill-component(data-aos="zoom-in", data-aos-delay="500")
     .block(:class="['sm:hidden']")
       mobile-skill
-  resume-component(:sticky_title="sticky_title")
+  resume-component(
+    :sticky_title="sticky_title",
+    :title="menus.resume.name"
+  )
   app-footer
   side-menu(:current_block="current_block", :menu_visibility="menu_visibility")
   mobile-menu(:current_block="current_block", :button_visibility="menu_visibility")
@@ -56,6 +60,7 @@ import SideMenu from "../components/SideMenu.vue";
 import MobileMenu from "../components/mobile/SideMenu.vue";
 import AppFooter from "../components/FooterComponent.vue";
 import MobileSkill from "../components/mobile/SkillComponent.vue";
+import menus from "../assets/menus";
 
 export default {
   name: "IndexPage",
@@ -69,12 +74,12 @@ export default {
     "mobile-skill": MobileSkill,
   },
   data() {
+    const menu_obj = {};
+    Object.keys(menus).forEach((key) => {
+      menu_obj[key] = null;
+    });
     return {
-      offset: {
-        autobiography: null,
-        skill: null,
-        resume: null,
-      },
+      offset: menu_obj,
       current_block: "",
       skill_visibility: false,
       links: {
@@ -83,6 +88,7 @@ export default {
       },
       menu_visibility: false,
       sticky_title: false,
+      menus,
     };
   },
   mounted() {

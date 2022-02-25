@@ -2,7 +2,7 @@
 section#resume.pt-0
   .top-0.pt-8.pb-5(:class="{ 'sticky': sticky_title }")
     h2.text-gray-100.text-4xl.font-mono.text-center.tracking-widest
-     | 經歷與網頁作品
+     | {{ title }}
   .mx-auto.mt-10(:class="['w-11/12', 'md:w-2/3']")
     .relative.border-l-4.border-gray-500.px-5.pb-10(
       v-for="data in informations",
@@ -55,6 +55,10 @@ export default {
     sticky_title: {
       type: Boolean,
       default: false,
+    },
+    title: {
+      type: String,
+      default: "",
     },
   },
   data() {

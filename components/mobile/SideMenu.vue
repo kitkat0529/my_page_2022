@@ -7,7 +7,7 @@
       @click="scroll(key)"
     )
       fa.text-2xl(
-        :icon="['fa', menu]",
+        :icon="['fa', menu.icon]",
         :class="[ current_block === key ? 'text-green-500' : 'text-green-900' ]"
       )
     .toggle.rounded-full.absolute.p-7(
@@ -23,6 +23,8 @@
 </template>
 
 <script>
+import menus from "../../assets/menus";
+
 export default {
   props: {
     current_block: {
@@ -37,12 +39,7 @@ export default {
   data() {
     return {
       menu_visibility: false,
-      menus: {
-        top: "user",
-        autobiography: "file",
-        skill: "hammer",
-        resume: "folder",
-      },
+      menus,
     };
   },
   watch: {

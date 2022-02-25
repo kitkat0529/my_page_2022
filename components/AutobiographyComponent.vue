@@ -2,11 +2,11 @@
 section#autobiography.py-0.relative.w-screen.overflow-hidden
   .grid.grid-cols-1(:class="['md:grid-cols-2']")
     div
-    .bg-gray-800.bg-opacity-60.min-h-screen.px-20.py-20(:class="['md:py-10', 'lg:py-20']")
+    .bg-gray-800.bg-opacity-60.min-h-screen.px-20.py-10
       h2.text-gray-100.text-4xl.font-mono.text-center.tracking-widest(
         data-aos="fade-up", data-aos-duration="1000"
       )
-        | 簡歷
+        | {{ title }}
       .leading-6.text-gray-50.tracking-wide.mt-10.text-sm(
         :class="['lg:text-base', 'lg:leading-8']"
         data-aos="fade-left", data-aos-duration="1000"
@@ -25,3 +25,14 @@ section#autobiography.py-0.relative.w-screen.overflow-hidden
         br
         | 直到現在，我也會在閒暇之餘透過網路或實體課程來增加自己的硬實力，磨練對目前社會趨勢的敏銳度，學習新知並培養自己非舒適圈領域的興趣。
 </template>
+
+<script>
+export default {
+  props: {
+    title: {
+      type: String,
+      default: "",
+    },
+  },
+};
+</script>
