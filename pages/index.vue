@@ -41,6 +41,7 @@
     .skill-canvas
       skill-component(data-aos="zoom-in", data-aos-delay="500")
   resume-component(:sticky_title="sticky_title")
+  app-footer
   side-menu(:current_block="current_block", :menu_visibility="menu_visibility")
   mobile-menu(:current_block="current_block", :button_visibility="menu_visibility")
 </template>
@@ -51,6 +52,7 @@ import SkillComponent from "../components/SkillComponent.vue";
 import ResumeComponent from "../components/ResumeComponent.vue";
 import SideMenu from "../components/SideMenu.vue";
 import MobileMenu from "../components/mobile/SideMenu.vue";
+import AppFooter from "../components/FooterComponent.vue";
 
 export default {
   name: "IndexPage",
@@ -60,6 +62,7 @@ export default {
     "resume-component": ResumeComponent,
     "side-menu": SideMenu,
     "mobile-menu": MobileMenu,
+    "app-footer": AppFooter,
   },
   data() {
     return {
