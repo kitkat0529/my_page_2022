@@ -38,8 +38,10 @@
   autobiography-component
   section#skill.min-h-screen(data-aos="fade-up", data-aos-duration="1000")
     h2.text-gray-100.text-4xl.font-mono.text-center.tracking-widest 技能
-    .skill-canvas
+    .skill-canvas.w-0.h-0.pt-0(:class="['sm:w-auto', 'sm:h-auto', 'sm:pt-16']")
       skill-component(data-aos="zoom-in", data-aos-delay="500")
+    .block(:class="['sm:hidden']")
+      mobile-skill
   resume-component(:sticky_title="sticky_title")
   app-footer
   side-menu(:current_block="current_block", :menu_visibility="menu_visibility")
@@ -53,6 +55,7 @@ import ResumeComponent from "../components/ResumeComponent.vue";
 import SideMenu from "../components/SideMenu.vue";
 import MobileMenu from "../components/mobile/SideMenu.vue";
 import AppFooter from "../components/FooterComponent.vue";
+import MobileSkill from "../components/mobile/SkillComponent.vue";
 
 export default {
   name: "IndexPage",
@@ -63,6 +66,7 @@ export default {
     "side-menu": SideMenu,
     "mobile-menu": MobileMenu,
     "app-footer": AppFooter,
+    "mobile-skill": MobileSkill,
   },
   data() {
     return {

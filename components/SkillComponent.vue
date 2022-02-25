@@ -1,5 +1,6 @@
 <script>
 import { Radar } from "vue-chartjs";
+import skills from "../assets/skills";
 
 export default {
   extends: Radar,
@@ -8,21 +9,13 @@ export default {
     const background_color = "#202a37";
     return {
       data: {
-        labels: [
-          "Javascript",
-          "HTML / CSS",
-          "Vue",
-          "Laravel",
-          "Adobe Photoshop",
-          "Adobe illustrator",
-          "Adobe XD / Figma",
-        ],
+        labels: Object.values(skills).map((skill) => skill.name),
         datasets: [
           {
             label: "Skill Level",
             backgroundColor: main_color,
             borderColor: main_color,
-            data: [7, 7, 6, 4, 8, 7, 5],
+            data: Object.values(skills).map((skill) => skill.level),
           },
         ],
       },
@@ -44,7 +37,7 @@ export default {
           },
           pointLabels: {
             fontColor: "#fff",
-            fontSize: 15,
+            fontSize: 12,
           },
           height: 600,
         },
