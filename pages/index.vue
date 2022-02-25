@@ -47,6 +47,7 @@
     :sticky_title="sticky_title",
     :title="menus.resume.name"
   )
+  design-component(:title="menus.design.name")
   app-footer
   side-menu(:current_block="current_block", :menu_visibility="menu_visibility")
   mobile-menu(:current_block="current_block", :button_visibility="menu_visibility")
@@ -61,6 +62,7 @@ import MobileMenu from "../components/mobile/SideMenu.vue";
 import AppFooter from "../components/FooterComponent.vue";
 import MobileSkill from "../components/mobile/SkillComponent.vue";
 import menus from "../assets/menus";
+import DesignComponent from "../components/DesignComponent.vue";
 
 export default {
   name: "IndexPage",
@@ -72,6 +74,7 @@ export default {
     "mobile-menu": MobileMenu,
     "app-footer": AppFooter,
     "mobile-skill": MobileSkill,
+    "design-component": DesignComponent,
   },
   data() {
     const menu_obj = {};
@@ -104,6 +107,7 @@ export default {
       const autobiography_offset = this.offset.autobiography.offsetTop - 500;
       const skill_offset = this.offset.skill.offsetTop - 300;
       const resume_offset = this.offset.resume.offsetTop - 300;
+      const design_offset = this.offset.design.offsetTop - 300;
 
       this.menu_visibility = window_offset > autobiography_offset;
       this.sticky_title = window_offset > resume_offset;
@@ -123,8 +127,13 @@ export default {
         if (!this.skill_visibility) {
           this.skill_visibility = true;
         }
-      } else if (window_offset > resume_offset) {
+      } else if (
+        window_offset > resume_offset &&
+        window_offset < design_offset
+      ) {
         this.current_block = "resume";
+      } else if (window_offset > design_offset) {
+        this.current_block = "design";
       }
     },
   },

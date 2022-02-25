@@ -3,4 +3,5 @@ export default {
   autobiography: { name: "簡歷", icon: "file" },
   skill: { name: "技能", icon: "hammer" },
   resume: { name: "經歷與網頁作品", icon: "folder" },
+  design: { name: "設計與排版", icon: "palette" },
 };

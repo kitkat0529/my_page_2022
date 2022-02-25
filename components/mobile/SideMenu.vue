@@ -6,7 +6,7 @@
       v-for="(menu, key) in menus"
       @click="scroll(key)"
     )
-      fa.text-2xl(
+      fa.text-xl(
         :icon="['fa', menu.icon]",
         :class="[ current_block === key ? 'text-green-500' : 'text-green-900' ]"
       )
