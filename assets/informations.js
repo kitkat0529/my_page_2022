@@ -40,7 +40,7 @@ export default [
         url: "",
         source: "",
         image:
-          "https://images.cakeresume.com/JLOBP/leah-chou-fd6c52/20f7988b-dc63-4ed1-b579-e2c9ad5016b1.png",
+          "https://images.cakeresume.com/JLOBP/leah-chou-fd6c52/940a9a8f-a8e3-4d0b-8db2-e2ca4bde6b0b.png",
       },
     ],
   },
