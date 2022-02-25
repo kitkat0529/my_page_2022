@@ -148,15 +148,9 @@ section {
   background-position: center center;
   background-attachment: fixed;
 
-  h2.sticky {
-    background-image: linear-gradient(
-        rgba(31, 41, 55, 0.9),
-        rgba(31, 41, 55, 0.9)
-      ),
-      url(../../static/background-2.jpg);
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
+  .sticky {
+    background-color: rgba(31, 41, 55, 0.5);
+    backdrop-filter: blur(10px);
     z-index: 1;
   }
 }
