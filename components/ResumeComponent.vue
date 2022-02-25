@@ -17,7 +17,11 @@ section#resume.pt-0
       .text-gray-500.text-lg.font-mono {{ data.time }}
       .text-gray-100.text-2xl {{ data.title }}
       .mt-3(v-if="data.projects && data.projects.length > 0")
-        carousel(:perPage="1", :autoplay="true", :autoplayTimeout="4000")
+        carousel(
+          :perPage="1",
+          :paginationActiveColor="'#6ee7b7'",
+          :paginationColor="'#055841'"
+        )
           slide.px-2(v-for="project in data.projects", :key="project.name")
             .p-5.rounded.bg-gray-600.w-full.overflow-hidden
               div
