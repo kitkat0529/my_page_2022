@@ -137,6 +137,10 @@ section {
     }
   }
 
+  .rounded-lg {
+    box-shadow: 5px 5px 0 #6a7280;
+  }
+
   .level span:first-child {
     text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5),
       1px 1px 0px rgba(255, 255, 255, 0.5), 1px 1px 0px rgba(255, 255, 255, 0.5);
