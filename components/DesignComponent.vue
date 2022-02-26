@@ -31,14 +31,15 @@ div
         )
       .display-image
         img(:src="images[selected].path")
-        .page.text-gray-500.text-sm(:class="['sm:text-xs']")
+        .page.text-gray-500.text-xs(:class="['sm:text-xs']")
           | {{ selected + 1 }} / {{ images.length }}
+        .text-center.text-gray-300.text-base(v-if="images[selected].description")
+          | {{ images[selected].description }}
       .next-button.p-2.cursor-pointer(:class="['sm:p-2', 'md:p-4']", @click="next(1)")
         fa.text-4xl.text-gray-500(
           :icon="['fa', 'angle-right']",
           :class="['hover:text-gray-100']"
         )
-
     .w-screen.h-screen.absolute.top-0(@click="selected = null")
 </template>
 
