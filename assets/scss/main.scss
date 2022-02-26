@@ -157,7 +157,9 @@ section {
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
+}
 
+#resume, #design {
   .sticky {
     background-color: rgba(31, 41, 55, 0.5);
     backdrop-filter: blur(10px);

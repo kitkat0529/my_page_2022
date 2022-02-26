@@ -43,10 +43,7 @@
       skill-component(data-aos="zoom-in", data-aos-delay="500")
     .block(:class="['sm:hidden']")
       mobile-skill
-  resume-component(
-    :sticky_title="sticky_title",
-    :title="menus.resume.name"
-  )
+  resume-component(:title="menus.resume.name")
   design-component(:title="menus.design.name")
   app-footer
   side-menu(:current_block="current_block", :menu_visibility="menu_visibility")
@@ -90,7 +87,6 @@ export default {
         github: "https://github.com/kitkat0529",
       },
       menu_visibility: false,
-      sticky_title: false,
       menus,
     };
   },
@@ -110,7 +106,6 @@ export default {
       const design_offset = this.offset.design.offsetTop - 300;
 
       this.menu_visibility = window_offset > autobiography_offset;
-      this.sticky_title = window_offset > resume_offset;
 
       if (window_offset < autobiography_offset) {
         this.current_block = "";

@@ -1,7 +1,9 @@
 <template lang="pug">
 div
   section#design.min-h-screen(data-aos="fade-up", data-aos-duration="1000")
-    h2.text-gray-100.text-4xl.font-mono.text-center.tracking-widest {{ title }}
+    .title.top-0.pt-8.pb-5.sticky
+      h2.text-gray-100.text-4xl.font-mono.text-center.tracking-widest
+        | {{ title }}
     .mt-12.mx-auto(:class="['w-8/12']")
       .grid.grid-cols-2.gap-4(
         :class="['sm:grid-cols-3', 'md:grid-cols-4']"
